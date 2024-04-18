@@ -8,6 +8,12 @@ from datetime import datetime
 from os.path import join
 import time
 from pathlib import Path
+import json
+import warnings
+
+# Suppress FutureWarning messages from pandas concat function
+#
+warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 def init_logging(name: str):
@@ -41,14 +47,14 @@ def get_executions(logger) -> pd.DataFrame:
     :return: a pandas dataframe of executions
     """
 
-    logger.debug('Starting task 1')
+    logger.debug('Starting Task 1')
 
     executions_df = pd.read_parquet(join('..', 'data', 'executions.parquet'))
 
-    logger.debug(f"# executions {len(executions_df)}")
+    logger.debug(f"     # executions {len(executions_df)}")
 
     if 'Venue' in executions_df.columns:
-        logger.debug(f"# venues {executions_df['Venue'].nunique()}")
+        logger.debug(f"     # venues {executions_df['Venue'].nunique()}")
     else:
         error = 'get_execution: Venue column missing in executions_df'
         logger.error(error)
@@ -61,16 +67,18 @@ def get_executions(logger) -> pd.DataFrame:
         executions_df['TradeTime'] = executions_df['TradeTime'].astype('datetime64[ns]')
         executions_df['TradeDate'] = executions_df['TradeTime'].dt.date
 
-        logger.debug(f"# venue trade date counts:")
+        logger.debug(f"     # venue trade date counts:")
 
         stats = executions_df.groupby(['Venue', 'TradeDate']).size().to_dict()
         for stat in stats:
-            logger.debug(f"{stat[0]}, {stat[1]}:  {stats[stat]}")
+            logger.debug(f"         {stat[0]}, {stat[1]}:  {stats[stat]}")
 
     else:
         error = 'get_execution: TradeTime column missing in executions_df'
         logger.error(error)
         raise ValueError(error)
+
+    logger.debug('Task 1 complete')
 
     return executions_df
 
@@ -82,14 +90,16 @@ def data_cleansing(logger, executions_df: pd.DataFrame) -> pd.DataFrame:
     :param executions_df: the executions dataframe
     :return: a filtered executions dataframe
     """
-    logger.debug('Starting task 2')
+    logger.debug('Starting Task 2')
     if 'Phase' in executions_df.columns:
         executions_df = executions_df.loc[executions_df['Phase'] == 'CONTINUOUS_TRADING']
-        logger.debug(f"# executions {len(executions_df)}")
+        logger.debug(f"     # executions {len(executions_df)}")
     else:
         error = 'data_cleansing: Phase column missing in executions_df'
         logger.error(error)
         raise ValueError(error)
+
+    logger.debug('Task 2 complete')
 
     return executions_df
 
@@ -101,7 +111,7 @@ def data_transformation(logger, executions_df: pd.DataFrame) -> pd.DataFrame:
     :param executions_df: the executions dataframe to enrich
     :return: the enriched executions dataframe
     """
-    logger.debug('Starting task 3')
+    logger.debug('Starting Task 3')
 
     if 'Quantity' in executions_df.columns:
         executions_df['Side'] = executions_df['Quantity'].apply(lambda x: 1 if x >= 0 else 2)
@@ -129,6 +139,8 @@ def data_transformation(logger, executions_df: pd.DataFrame) -> pd.DataFrame:
     # note it's an inner join on the ISIN fields
     #
     executions_df = executions_df.merge(reference_df[columns_req], how='inner', on='ISIN')
+
+    logger.debug('Task 3 complete')
 
     return executions_df
 
@@ -233,7 +245,7 @@ def data_calculations(logger, dask_cluster, executions_df: pd.DataFrame) -> pd.D
     :param executions_df: the executions dataframe
     :return: the enriched executions dataframe
     """
-    logger.debug('Starting task 4')
+    logger.debug('Starting Task 4')
 
     results = []
     remote_df = dask_cluster.scatter(executions_df)
@@ -242,7 +254,7 @@ def data_calculations(logger, dask_cluster, executions_df: pd.DataFrame) -> pd.D
     #
     securities = executions_df['id'].unique()
     for idx in range(len(securities)):
-        logger.debug(f'Submitting tca calc for security {securities[idx]}')
+        logger.debug(f'     Submitting tca calc for security {securities[idx]}')
 
         results.append(dask_cluster.submit(tca_enrich, securities[idx], remote_df))
 
@@ -251,7 +263,7 @@ def data_calculations(logger, dask_cluster, executions_df: pd.DataFrame) -> pd.D
     tca_enriched_df = None
     for future, result_df in as_completed(results, with_results=True):
         if result_df is not None:
-            logger.debug(f"Received tca calc for security {result_df.iloc[0]['id']}")
+            logger.debug(f"     Received tca calc for security {result_df.iloc[0]['id']}")
 
             # Union the resulting dataframes
             if tca_enriched_df is None:
@@ -265,6 +277,8 @@ def data_calculations(logger, dask_cluster, executions_df: pd.DataFrame) -> pd.D
     #
     tca_enriched_df = tca_enriched_df.sort_values(by=['TradeTime'])
     tca_enriched_df = tca_enriched_df.reset_index()
+
+    logger.debug('Task 4 complete')
 
     return tca_enriched_df
 
@@ -307,7 +321,7 @@ def analysis(name: str):
         stats['write_output_sec'] = end_time - start_time_5
         stats['total_sec'] = end_time - start_time
 
-        logger.info(f"{stats}")
+        logger.info(f"{json.dumps(stats, indent=4)}")
 
     except ValueError as e:
         logger.error(f"{e}", exc_info=True)
