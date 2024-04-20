@@ -1,0 +1,169 @@
+2024-04-20 08:01:48,550 - case_study - INFO - Dask Dashboard link: http://127.0.0.1:8787/status
+2024-04-20 08:01:48,551 - case_study - DEBUG - Starting Task 1
+2024-04-20 08:01:48,618 - case_study - DEBUG -      # executions 4203
+2024-04-20 08:01:48,618 - case_study - DEBUG -      # venues 6
+2024-04-20 08:01:48,622 - case_study - DEBUG -      # venue trade date counts:
+2024-04-20 08:01:48,624 - case_study - DEBUG -          XBRU, 2022-09-02:  403
+2024-04-20 08:01:48,624 - case_study - DEBUG -          XCSE, 2022-09-02:  511
+2024-04-20 08:01:48,624 - case_study - DEBUG -          XETA, 2022-09-02:  2904
+2024-04-20 08:01:48,624 - case_study - DEBUG -          XETB, 2022-09-02:  36
+2024-04-20 08:01:48,624 - case_study - DEBUG -          XETS, 2022-09-02:  6
+2024-04-20 08:01:48,625 - case_study - DEBUG -          XSWX, 2022-09-02:  343
+2024-04-20 08:01:48,625 - case_study - DEBUG - Task 1 complete
+2024-04-20 08:01:48,625 - case_study - DEBUG - Starting Task 2
+2024-04-20 08:01:48,626 - case_study - DEBUG -      Filtering on CONTINUOUS_TRADING # executions 4103
+2024-04-20 08:01:48,626 - case_study - DEBUG - Task 2 complete
+2024-04-20 08:01:48,626 - case_study - DEBUG - Starting Task 3
+2024-04-20 08:01:48,629 - case_study - DEBUG -      Side == 1 # executions 2415
+2024-04-20 08:01:48,629 - case_study - DEBUG -      Side == 1 # executions 1688
+2024-04-20 08:01:48,637 - case_study - DEBUG -      check columns added ['ISIN', 'Currency', 'Venue', 'TradeTime', 'Price', 'Trade_id', 'Phase', 'Quantity', 'TradeDate', 'Side', 'primary_ticker', 'primary_mic', 'id']
+2024-04-20 08:01:48,637 - case_study - DEBUG - Task 3 complete
+2024-04-20 08:01:48,637 - case_study - DEBUG - Starting Task 4
+2024-04-20 08:01:48,657 - case_study - DEBUG -      Submitting tca calc for security 328336
+2024-04-20 08:01:48,662 - case_study - DEBUG -      Submitting tca calc for security 326330
+2024-04-20 08:01:48,663 - case_study - DEBUG -      Submitting tca calc for security 329308
+2024-04-20 08:01:48,665 - case_study - DEBUG -      Submitting tca calc for security 328259
+2024-04-20 08:01:48,666 - case_study - DEBUG -      Submitting tca calc for security 335438
+2024-04-20 08:01:48,668 - case_study - DEBUG -      Submitting tca calc for security 336193
+2024-04-20 08:01:48,670 - case_study - DEBUG -      Submitting tca calc for security 323448
+2024-04-20 08:01:48,671 - case_study - DEBUG -      Submitting tca calc for security 326288
+2024-04-20 08:01:48,673 - case_study - DEBUG -      Submitting tca calc for security 323508
+2024-04-20 08:01:48,675 - case_study - DEBUG -      Submitting tca calc for security 329340
+2024-04-20 08:01:48,678 - case_study - DEBUG -      Submitting tca calc for security 499639
+2024-04-20 08:01:48,680 - case_study - DEBUG -      Submitting tca calc for security 326525
+2024-04-20 08:01:48,682 - case_study - DEBUG -      Submitting tca calc for security 362008
+2024-04-20 08:01:48,683 - case_study - DEBUG -      Submitting tca calc for security 327489
+2024-04-20 08:01:48,687 - case_study - DEBUG -      Submitting tca calc for security 327496
+2024-04-20 08:01:48,688 - case_study - DEBUG -      Submitting tca calc for security 323472
+2024-04-20 08:01:48,693 - case_study - DEBUG -      Submitting tca calc for security 326295
+2024-04-20 08:01:48,695 - case_study - DEBUG -      Submitting tca calc for security 324162
+2024-04-20 08:01:48,698 - case_study - DEBUG -      Submitting tca calc for security 323411
+2024-04-20 08:01:48,699 - case_study - DEBUG -      Submitting tca calc for security 326490
+2024-04-20 08:01:48,704 - case_study - DEBUG -      Submitting tca calc for security 323496
+2024-04-20 08:01:48,709 - case_study - DEBUG -      Submitting tca calc for security 325561
+2024-04-20 08:01:48,711 - case_study - DEBUG -      Submitting tca calc for security 325460
+2024-04-20 08:01:48,713 - case_study - DEBUG -      Submitting tca calc for security 286168571
+2024-04-20 08:01:48,714 - case_study - DEBUG -      Submitting tca calc for security 324084
+2024-04-20 08:01:48,717 - case_study - DEBUG -      Submitting tca calc for security 343570
+2024-04-20 08:01:48,723 - case_study - DEBUG -      Submitting tca calc for security 325453
+2024-04-20 08:01:48,724 - case_study - DEBUG -      Submitting tca calc for security 286167907
+2024-04-20 08:01:48,726 - case_study - DEBUG -      Submitting tca calc for security 378534881
+2024-04-20 08:01:48,729 - case_study - DEBUG -      Submitting tca calc for security 286168597
+2024-04-20 08:01:48,730 - case_study - DEBUG -      Submitting tca calc for security 343630
+2024-04-20 08:01:48,732 - case_study - DEBUG -      Submitting tca calc for security 324144
+2024-04-20 08:01:48,734 - case_study - DEBUG -      Submitting tca calc for security 329527
+2024-04-20 08:01:48,736 - case_study - DEBUG -      Submitting tca calc for security 377546522
+2024-04-20 08:01:48,738 - case_study - DEBUG -      Submitting tca calc for security 331495
+2024-04-20 08:01:48,741 - case_study - DEBUG -      Submitting tca calc for security 326218
+2024-04-20 08:01:48,743 - case_study - DEBUG -      Submitting tca calc for security 326232
+2024-04-20 08:01:48,746 - case_study - DEBUG -      Submitting tca calc for security 326302
+2024-04-20 08:01:48,747 - case_study - DEBUG -      Submitting tca calc for security 326455
+2024-04-20 08:01:48,749 - case_study - DEBUG -      Submitting tca calc for security 326539
+2024-04-20 08:01:48,753 - case_study - DEBUG -      Submitting tca calc for security 331530
+2024-04-20 08:01:48,754 - case_study - DEBUG -      Submitting tca calc for security 325439
+2024-04-20 08:01:48,756 - case_study - DEBUG -      Submitting tca calc for security 325502
+2024-04-20 08:01:48,757 - case_study - DEBUG -      Submitting tca calc for security 325509
+2024-04-20 08:01:48,758 - case_study - DEBUG -      Submitting tca calc for security 325624
+2024-04-20 08:01:48,760 - case_study - DEBUG -      Submitting tca calc for security 338253
+2024-04-20 08:01:48,761 - case_study - DEBUG -      Submitting tca calc for security 329445
+2024-04-20 08:01:48,763 - case_study - DEBUG -      Submitting tca calc for security 325516
+2024-04-20 08:01:48,764 - case_study - DEBUG -      Submitting tca calc for security 325467
+2024-04-20 08:01:48,765 - case_study - DEBUG -      Submitting tca calc for security 325544
+2024-04-20 08:01:48,767 - case_study - DEBUG -      Submitting tca calc for security 325432
+2024-04-20 08:01:48,768 - case_study - DEBUG -      Submitting tca calc for security 325474
+2024-04-20 08:01:48,769 - case_study - DEBUG -      Submitting tca calc for security 329480
+2024-04-20 08:01:48,771 - case_study - DEBUG -      Submitting tca calc for security 327391
+2024-04-20 08:01:48,772 - case_study - DEBUG -      Submitting tca calc for security 324168
+2024-04-20 08:01:48,776 - case_study - DEBUG -      Submitting tca calc for security 324078
+2024-04-20 08:01:48,777 - case_study - DEBUG -      Submitting tca calc for security 326176
+2024-04-20 08:01:48,778 - case_study - DEBUG -      Submitting tca calc for security 326400
+2024-04-20 08:01:48,779 - case_study - DEBUG -      Submitting tca calc for security 323436
+2024-04-20 08:01:48,781 - case_study - DEBUG -      Submitting tca calc for security 326309
+2024-04-20 08:01:48,782 - case_study - DEBUG -      Submitting tca calc for security 326169
+2024-04-20 08:01:48,784 - case_study - DEBUG -      Submitting tca calc for security 323502
+2024-04-20 08:01:48,785 - case_study - DEBUG -      Submitting tca calc for security 326351
+2024-04-20 08:01:48,787 - case_study - DEBUG -      Submitting tca calc for security 324072
+2024-04-20 08:01:48,788 - case_study - DEBUG -      Submitting tca calc for security 323478
+2024-04-20 08:01:48,789 - case_study - DEBUG -      Submitting tca calc for security 336379
+2024-04-20 08:01:48,790 - case_study - DEBUG -      Submitting tca calc for security 327538
+2024-04-20 08:01:48,791 - case_study - DEBUG -      Submitting tca calc for security 331732
+2024-04-20 08:01:50,659 - case_study - DEBUG -      Received tca calc for security 499639
+2024-04-20 08:01:50,818 - case_study - DEBUG -      Received tca calc for security 336193
+2024-04-20 08:01:51,041 - case_study - DEBUG -      Received tca calc for security 326525
+2024-04-20 08:01:51,378 - case_study - DEBUG -      Received tca calc for security 362008
+2024-04-20 08:01:51,748 - case_study - DEBUG -      Received tca calc for security 328336
+2024-04-20 08:01:51,868 - case_study - DEBUG -      Received tca calc for security 323472
+2024-04-20 08:01:51,875 - case_study - DEBUG -      Received tca calc for security 326295
+2024-04-20 08:01:51,963 - case_study - DEBUG -      Received tca calc for security 286168571
+2024-04-20 08:01:52,199 - case_study - DEBUG -      Received tca calc for security 327489
+2024-04-20 08:01:52,217 - case_study - DEBUG -      Received tca calc for security 326288
+2024-04-20 08:01:52,488 - case_study - DEBUG -      Received tca calc for security 378534881
+2024-04-20 08:01:52,925 - case_study - DEBUG -      Received tca calc for security 325453
+2024-04-20 08:01:53,344 - case_study - DEBUG -      Received tca calc for security 323448
+2024-04-20 08:01:53,352 - case_study - DEBUG -      Received tca calc for security 328259
+2024-04-20 08:01:53,392 - case_study - DEBUG -      Received tca calc for security 335438
+2024-04-20 08:01:53,658 - case_study - DEBUG -      Received tca calc for security 325561
+2024-04-20 08:01:53,709 - case_study - DEBUG -      Received tca calc for security 343570
+2024-04-20 08:01:53,719 - case_study - DEBUG -      Received tca calc for security 286168597
+2024-04-20 08:01:53,720 - case_study - DEBUG -      Received tca calc for security 286167907
+2024-04-20 08:01:53,866 - case_study - DEBUG -      Received tca calc for security 324162
+2024-04-20 08:01:54,107 - case_study - DEBUG -      Received tca calc for security 326302
+2024-04-20 08:01:54,327 - case_study - DEBUG -      Received tca calc for security 329340
+2024-04-20 08:01:54,445 - case_study - DEBUG -      Received tca calc for security 326490
+2024-04-20 08:01:54,449 - case_study - DEBUG -      Received tca calc for security 331530
+2024-04-20 08:01:54,451 - case_study - DEBUG -      Received tca calc for security 325439
+2024-04-20 08:01:54,843 - case_study - DEBUG -      Received tca calc for security 325509
+2024-04-20 08:01:55,051 - case_study - DEBUG -      Received tca calc for security 338253
+2024-04-20 08:01:55,117 - case_study - DEBUG -      Received tca calc for security 327496
+2024-04-20 08:01:55,156 - case_study - DEBUG -      Received tca calc for security 323508
+2024-04-20 08:01:55,160 - case_study - DEBUG -      Received tca calc for security 343630
+2024-04-20 08:01:55,180 - case_study - DEBUG -      Received tca calc for security 323411
+2024-04-20 08:01:55,662 - case_study - DEBUG -      Received tca calc for security 325474
+2024-04-20 08:01:55,781 - case_study - DEBUG -      Received tca calc for security 325624
+2024-04-20 08:01:55,825 - case_study - DEBUG -      Received tca calc for security 325502
+2024-04-20 08:01:55,925 - case_study - DEBUG -      Received tca calc for security 324084
+2024-04-20 08:01:56,169 - case_study - DEBUG -      Received tca calc for security 326455
+2024-04-20 08:01:56,217 - case_study - DEBUG -      Received tca calc for security 326309
+2024-04-20 08:01:56,261 - case_study - DEBUG -      Received tca calc for security 324144
+2024-04-20 08:01:56,275 - case_study - DEBUG -      Received tca calc for security 324168
+2024-04-20 08:01:56,704 - case_study - DEBUG -      Received tca calc for security 326400
+2024-04-20 08:01:56,725 - case_study - DEBUG -      Received tca calc for security 326232
+2024-04-20 08:01:57,212 - case_study - DEBUG -      Received tca calc for security 326176
+2024-04-20 08:01:57,222 - case_study - DEBUG -      Received tca calc for security 325467
+2024-04-20 08:01:57,492 - case_study - DEBUG -      Received tca calc for security 323436
+2024-04-20 08:01:57,496 - case_study - DEBUG -      Received tca calc for security 331732
+2024-04-20 08:01:57,918 - case_study - DEBUG -      Received tca calc for security 325432
+2024-04-20 08:01:57,926 - case_study - DEBUG -      Received tca calc for security 325544
+2024-04-20 08:01:58,242 - case_study - DEBUG -      Received tca calc for security 329480
+2024-04-20 08:01:58,483 - case_study - DEBUG -      Received tca calc for security 325516
+2024-04-20 08:01:58,550 - case_study - DEBUG -      Received tca calc for security 327391
+2024-04-20 08:01:58,584 - case_study - DEBUG -      Received tca calc for security 331495
+2024-04-20 08:01:58,769 - case_study - DEBUG -      Received tca calc for security 323502
+2024-04-20 08:01:58,850 - case_study - DEBUG -      Received tca calc for security 336379
+2024-04-20 08:01:58,866 - case_study - DEBUG -      Received tca calc for security 329445
+2024-04-20 08:01:58,945 - case_study - DEBUG -      Received tca calc for security 323496
+2024-04-20 08:01:58,961 - case_study - DEBUG -      Received tca calc for security 327538
+2024-04-20 08:01:58,968 - case_study - DEBUG -      Received tca calc for security 326330
+2024-04-20 08:01:59,028 - case_study - DEBUG -      Received tca calc for security 326169
+2024-04-20 08:01:59,110 - case_study - DEBUG -      Received tca calc for security 323478
+2024-04-20 08:01:59,125 - case_study - DEBUG -      Received tca calc for security 326351
+2024-04-20 08:01:59,383 - case_study - DEBUG -      Received tca calc for security 329527
+2024-04-20 08:01:59,431 - case_study - DEBUG -      Received tca calc for security 326218
+2024-04-20 08:01:59,441 - case_study - DEBUG -      Received tca calc for security 329308
+2024-04-20 08:01:59,749 - case_study - DEBUG -      Received tca calc for security 324078
+2024-04-20 08:02:00,157 - case_study - DEBUG -      Received tca calc for security 325460
+2024-04-20 08:02:00,192 - case_study - DEBUG -      Received tca calc for security 324072
+2024-04-20 08:02:00,510 - case_study - DEBUG -      Received tca calc for security 326539
+2024-04-20 08:02:00,752 - case_study - DEBUG -      Received tca calc for security 377546522
+2024-04-20 08:02:00,759 - case_study - DEBUG -      Price enriched # executions 4226
+2024-04-20 08:02:00,760 - case_study - DEBUG -      Prices missing # executions 3662
+2024-04-20 08:02:00,761 - case_study - DEBUG -      Prices found # executions 564
+2024-04-20 08:02:00,761 - case_study - DEBUG - Task 4 complete
+2024-04-20 08:02:00,787 - case_study - INFO - {
+    "get_executions_sec": 0.0741429328918457,
+    "data_cleansing_sec": 0.0017478466033935547,
+    "data_transformation_sec": 0.010604143142700195,
+    "data_calculations_sec": 12.125104904174805,
+    "write_output_sec": 0.02497720718383789,
+    "total_sec": 12.236586093902588
+}

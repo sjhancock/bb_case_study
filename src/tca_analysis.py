@@ -93,7 +93,7 @@ def data_cleansing(logger, executions_df: pd.DataFrame) -> pd.DataFrame:
     logger.debug('Starting Task 2')
     if 'Phase' in executions_df.columns:
         executions_df = executions_df.loc[executions_df['Phase'] == 'CONTINUOUS_TRADING']
-        logger.debug(f"     # executions {len(executions_df)}")
+        logger.debug(f"     Filtering on CONTINUOUS_TRADING # executions {len(executions_df)}")
     else:
         error = 'data_cleansing: Phase column missing in executions_df'
         logger.error(error)
@@ -115,6 +115,13 @@ def data_transformation(logger, executions_df: pd.DataFrame) -> pd.DataFrame:
 
     if 'Quantity' in executions_df.columns:
         executions_df['Side'] = executions_df['Quantity'].apply(lambda x: 1 if x >= 0 else 2)
+
+        # Check count of Side transactions
+        side_1_df = executions_df.loc[executions_df['Side'] == 1]
+        logger.debug(f"     Side == 1 # executions {len(side_1_df)}")
+        side_2_df = executions_df.loc[executions_df['Side'] == 2]
+        logger.debug(f"     Side == 1 # executions {len(side_2_df)}")
+
     else:
         error = 'data_transformation: Quantity column missing in executions_df'
         logger.error(error)
@@ -139,6 +146,8 @@ def data_transformation(logger, executions_df: pd.DataFrame) -> pd.DataFrame:
     # note it's an inner join on the ISIN fields
     #
     executions_df = executions_df.merge(reference_df[columns_req], how='inner', on='ISIN')
+
+    logger.debug(f"     check columns added {list(executions_df.columns)}")
 
     logger.debug('Task 3 complete')
 
@@ -277,6 +286,12 @@ def data_calculations(logger, dask_cluster, executions_df: pd.DataFrame) -> pd.D
     #
     tca_enriched_df = tca_enriched_df.sort_values(by=['TradeTime'])
     tca_enriched_df = tca_enriched_df.reset_index()
+
+    logger.debug(f"     Price enriched # executions {len(tca_enriched_df)}")
+    null_df = tca_enriched_df.loc[tca_enriched_df['best_bid'].isnull()]
+    not_null_df = tca_enriched_df.loc[tca_enriched_df['best_bid'].notnull()]
+    logger.debug(f"     Prices missing # executions {len(null_df)}")
+    logger.debug(f"     Prices found # executions {len(not_null_df)}")
 
     logger.debug('Task 4 complete')
 

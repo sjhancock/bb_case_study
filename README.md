@@ -42,7 +42,21 @@ Then run the following:
 python tca_analysis.py
 ```
 
-The output file enriched_executions.parquet will be produced in the data dir
+The output file enriched_executions.parquet will be produced in the data dir and the log file will be produced in logs dir.
+
+The log will contain executions counts for each stage of the processing and timing stats at the end.
+
+On my machine running 4 Dask workers timings were around:
+```json
+{
+    "get_executions_sec": 0.0741429328918457,
+    "data_cleansing_sec": 0.0017478466033935547,
+    "data_transformation_sec": 0.010604143142700195,
+    "data_calculations_sec": 12.125104904174805,
+    "write_output_sec": 0.02497720718383789,
+    "total_sec": 12.236586093902588
+}
+```
 
 You can explore the parquet files using Jupyter Lab. 
 
