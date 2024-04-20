@@ -42,7 +42,7 @@ Then run the following:
 python tca_analysis.py
 ```
 
-The output file enriched_executions.parquet will be produced in the data dir and the log file will be produced in logs dir.
+The output file enriched_executions.parquet will be produced in the directory data and the log file will be produced in directory src/logs.
 
 The log will contain executions counts for each stage of the processing and timing stats at the end.
 
